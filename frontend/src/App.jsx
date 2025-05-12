@@ -8,8 +8,8 @@ function App() {
     <Router>
       <div className="min-h-screen flex flex-col">
         <Header />
-        <main className="flex-grow container mx-auto px-4 py-8">
-          <h1 className="text-4xl font-bold text-center mb-8 animate-fade-in">
+        <main className="flex-grow container max-w-[98%] mx-auto px-4 pt-4">
+          <h1 className="text-4xl font-bold text-center mb-4 animate-fade-in m-0">
             My Games
           </h1>
           <Routes>

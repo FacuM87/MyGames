@@ -2,10 +2,10 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <footer className="bg-base-200 py-4 mt-8">
+    <footer className="bg-base-200 py-4">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-8">
-          <p className="text-center">
+          <p className="text-center text-xs">
             Developed by Facu Mingorance - 2025
           </p>
           <div className="flex items-center space-x-4">
@@ -13,7 +13,7 @@ const Footer = () => {
               href="https://github.com/yourusername"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-2xl hover:text-primary transition-colors duration-200"
+              className="text-lg hover:text-primary transition-colors duration-200"
             >
               <FaGithub />
             </a>
@@ -21,7 +21,7 @@ const Footer = () => {
               href="https://linkedin.com/in/yourusername"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-2xl hover:text-primary transition-colors duration-200"
+              className="text-lg hover:text-primary transition-colors duration-200"
             >
               <FaLinkedin />
             </a>
