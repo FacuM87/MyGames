@@ -14,14 +14,12 @@ const Header = () => {
     <header className="bg-base-200 shadow-lg">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
           <div className="flex-shrink-0">
             <Link to="/" className="text-2xl font-bold">
               MyGames
             </Link>
           </div>
 
-          {/* Navigation */}
           <nav className="flex items-center space-x-8">
             <Link to="/" className="nav-link">Home</Link>
             <div className="dropdown dropdown-hover">
@@ -36,9 +34,7 @@ const Header = () => {
             <Link to="/about" className="nav-link">About me</Link>
           </nav>
 
-          {/* Right side items */}
           <div className="flex items-center space-x-4">
-            {/* Search Bar */}
             <div className="relative">
               <input
                 type="text"
@@ -48,13 +44,11 @@ const Header = () => {
               <FaSearch className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
             </div>
 
-            {/* Auth Buttons */}
             <div className="flex items-center space-x-4">
               <Link to="/login" className="btn btn-ghost">Login</Link>
               <Link to="/register" className="btn btn-primary">Register</Link>
             </div>
 
-            {/* Theme Toggle */}
             <button
               onClick={toggleDarkMode}
               className="btn btn-ghost btn-circle"
