@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 const Carousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   
-  // Placeholder images - replace with actual game images later
   const slides = [
     {
       id: 1,
@@ -32,7 +31,7 @@ const Carousel = () => {
     }, 3000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [slides.length]);
 
   return (
     <div className="relative w-full h-[calc(100vh-16rem)] mx-auto">
@@ -41,10 +40,12 @@ const Carousel = () => {
           <Link
             key={slide.id}
             to={slide.link}
-            className={`absolute w-full h-full transition-opacity duration-500 ${
-              index === currentSlide ? 'opacity-100' : 'opacity-0'
-            }`}
-          >
+            className={`absolute w-full h-full transition-opacity duration-500
+                      ${
+                        index === currentSlide ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+                      }`
+                    }>
+                      
             <img
               src={slide.image}
               alt={slide.title}
@@ -57,7 +58,6 @@ const Carousel = () => {
         ))}
       </div>
 
-      {/* Navigation Dots */}
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
         {slides.map((_, index) => (
           <button
