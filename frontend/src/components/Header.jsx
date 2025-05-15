@@ -49,10 +49,7 @@ const Header = () => {
               <Link to="/register" className="btn btn-primary">Register</Link>
             </div>
 
-            <button
-              onClick={toggleDarkMode}
-              className="btn btn-ghost btn-circle"
-            >
+            <button onClick={toggleDarkMode} className="btn btn-ghost btn-circle">
               {isDarkMode ? <FaSun /> : <FaMoon />}
             </button>
           </div>

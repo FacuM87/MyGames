@@ -50,7 +50,7 @@ const TicTacToe = () => {
             <div className="mb-8 text-xl">
                 {winner ? (
                     <p className="text-center">
-                        {winner === "draw" ? "It's a draw!" : `Player ${winner} wins!`}
+                        {winner === "draw" ? "Draw!" : `Player ${winner} wins!`}
                     </p>
                 ) : (
                     <p className="text-center">Player {isXturn ? "X" : "O"}'s turn</p>
