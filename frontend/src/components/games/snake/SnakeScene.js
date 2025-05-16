@@ -62,6 +62,7 @@ export default class SnakeScene extends Phaser.Scene {
       newHead.y < 0 ||
       newHead.y >= 400 ||
       this.snake.slice(1).some(seg => seg.x === newHead.x && seg.y === newHead.y)
+      
     ) {
       this.scene.restart();
       this.direction = 'RIGHT';
