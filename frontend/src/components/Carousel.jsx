@@ -35,6 +35,7 @@ const Carousel = () => {
 
   return (
     <div className="relative w-full h-[calc(100vh-16rem)] mx-auto">
+      <h1 className="text-4xl font-bold text-center mb-4 animate-fade-in m-0">My Games</h1>
       <div className="relative h-full overflow-hidden rounded-lg">
         {slides.map((slide, index) => (
           <Link

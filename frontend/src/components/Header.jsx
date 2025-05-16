@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FaSun, FaMoon, FaSearch } from 'react-icons/fa';
+import { FaSun, FaMoon, FaSearch, FaBars } from 'react-icons/fa';
 
 const Header = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -20,10 +20,10 @@ const Header = () => {
             </Link>
           </div>
 
-          <nav className="flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center space-x-8">
             <Link to="/" className="nav-link">Home</Link>
             <div className="dropdown dropdown-hover">
-              <label tabIndex={0} className="nav-link cursor-pointer">Games</label>
+              <label tabIndex={0} className="nav-link">Games</label>
               <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
                 <li><Link to="/games/tictactoe">Tic Tac Toe</Link></li>
                 <li><Link to="/games/snake">Snake</Link></li>
@@ -31,11 +31,11 @@ const Header = () => {
                 <li><Link to="/games">See more...</Link></li>
               </ul>
             </div>
-            <Link to="/about" className="nav-link">About me</Link>
+            <Link to="/about" className="nav-link">About&nbsp;me</Link>
           </nav>
 
           <div className="flex items-center space-x-4">
-            <div className="relative">
+            <div className="relative hidden lg:block">
               <input
                 type="text"
                 placeholder="Search games..."
@@ -44,7 +44,7 @@ const Header = () => {
               <FaSearch className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
             </div>
 
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-2">
               <Link to="/login" className="btn btn-ghost">Login</Link>
               <Link to="/register" className="btn btn-primary">Register</Link>
             </div>
@@ -52,6 +52,29 @@ const Header = () => {
             <button onClick={toggleDarkMode} className="btn btn-ghost btn-circle">
               {isDarkMode ? <FaSun /> : <FaMoon />}
             </button>
+
+            <div className="dropdown dropdown-end lg:hidden">
+              <label tabIndex={0} className="btn btn-ghost btn-circle">
+                <FaBars />
+              </label>
+              <ul
+                tabIndex={0}
+                className="menu dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              >
+                <li><Link to="/">Home</Link></li>
+                <li>
+                  <details>
+                    <summary>Games</summary>
+                    <ul>
+                      <li><Link to="/games/tictactoe">Tic Tac Toe</Link></li>
+                      <li><Link to="/games/snake">Snake</Link></li>
+                      <li><Link to="/games">See more...</Link></li>
+                    </ul>
+                  </details>
+                </li>
+                <li><Link to="/about">About me</Link></li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -59,4 +82,4 @@ const Header = () => {
   );
 };
 
-export default Header; 
+export default Header;
