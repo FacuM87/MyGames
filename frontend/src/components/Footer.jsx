@@ -10,18 +10,18 @@ const Footer = () => {
           </p>
           <div className="flex items-center space-x-4">
             <a
-              href="https://github.com/yourusername"
+              href="https://github.com/FacuM87"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-lg hover:text-primary transition-colors duration-200"
+              className="text-lg"
             >
               <FaGithub />
             </a>
             <a
-              href="https://linkedin.com/in/yourusername"
+              href="https://linkedin.com/in/facundo-mingorance"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-lg hover:text-primary transition-colors duration-200"
+              className="text-lg"
             >
               <FaLinkedin />
             </a>
