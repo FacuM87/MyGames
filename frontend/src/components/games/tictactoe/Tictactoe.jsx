@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 const TicTacToe = () => {
-    const [board, setBoard] = useState(Array(9).fill(null))
+    const [board, setBoard] = useState([null, null, null, null, null, null, null, null, null])
     const [isXturn, setXturn] = useState(true)
     const [winner, setWinner] = useState(null)
 
