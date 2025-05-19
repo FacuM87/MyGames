@@ -38,7 +38,7 @@ const TicTacToe = () => {
     }
 
     const resetGame = () => {
-        setBoard(Array(9).fill(null))
+        setBoard([null, null, null, null, null, null, null, null, null])
         setXturn(true)
         setWinner(null)
     }
