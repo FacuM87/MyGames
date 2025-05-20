@@ -19,9 +19,9 @@ const Carousel = () => {
     },
     {
       id: 3,
-      image: 'https://placehold.co/1200x600/0f3460/ffffff?text=Pacman',
-      title: 'Pacman',
-      link: '/games/pacman'
+      image: 'https://placehold.co/1200x600/0f3460/ffffff?text=Pong',
+      title: 'Pong',
+      link: '/games/pong'
     }
   ];
 
