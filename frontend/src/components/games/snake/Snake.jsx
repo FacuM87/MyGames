@@ -2,18 +2,24 @@
 import { useEffect, useRef } from "react";
 import Phaser from "phaser";
 import SnakeScene from "./SnakeScene.js";
+import MenuScene from "./MenuScene.js";
+import GameOverScene from "./GameOverScene.js";
 
 export default function SnakeGame() {
   const gameContainerRef = useRef(null);
 
   useEffect(() => {
+    const colors = {
+      "black":"1d1d1d"
+    }
+
     const config = {
       type: Phaser.AUTO,
       width: 400,
       height: 400,
-      backgroundColor: "#1d1d1d",
+      backgroundColor: colors["black"],
       parent: gameContainerRef.current,
-      scene: SnakeScene,
+      scene: [MenuScene, SnakeScene, GameOverScene],
     };
 
     const game = new Phaser.Game(config);

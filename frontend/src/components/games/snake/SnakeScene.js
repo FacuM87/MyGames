@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import { shapeColors } from './colors.js';
 
 export default class SnakeScene extends Phaser.Scene {
   constructor() {
@@ -11,12 +12,13 @@ export default class SnakeScene extends Phaser.Scene {
   }
 
   create() {
+
     this.snake = [];
     for (let i = 0; i < 3; i++) {
-      this.snake.push(this.add.rectangle(160 - i * 10, 160, 10, 10, 0x00ff00).setOrigin(0));
+      this.snake.push(this.add.rectangle(160 - (i * 10), 160, 10, 10, shapeColors["green"]).setOrigin(0));
     }
 
-    this.food = this.add.rectangle(this.getRandom(0, 390), this.getRandom(0, 390), 10, 10, 0xff0000).setOrigin(0);
+    this.food = this.add.rectangle(this.getRandom(0, 390), this.getRandom(0, 390), 10, 10, shapeColors["red"]).setOrigin(0);
 
     this.input.keyboard.on('keydown', this.handleInput, this);
   }
@@ -39,7 +41,7 @@ export default class SnakeScene extends Phaser.Scene {
   moveSnake() {
     this.direction = this.newDirection;
     const head = this.snake[0];
-    const newHead = this.add.rectangle(head.x, head.y, 10, 10, 0x00ff00).setOrigin(0);
+    const newHead = this.add.rectangle(head.x, head.y, 10, 10, shapeColors["green"]).setOrigin(0);
 
     if (this.direction === 'RIGHT') newHead.x += 10;
     if (this.direction === 'LEFT') newHead.x -= 10;
@@ -57,9 +59,7 @@ export default class SnakeScene extends Phaser.Scene {
     }
 
     if ( newHead.x < 0 || newHead.x >= 400 || newHead.y < 0 || newHead.y >= 400 || this.snake.slice(1).some(seg => seg.x === newHead.x && seg.y === newHead.y)){
-      this.scene.restart();
-      this.direction = 'RIGHT';
-      this.newDirection = 'RIGHT';
+      this.scene.start('GameOverScene');
     }
   }
 
