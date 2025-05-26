@@ -22,7 +22,7 @@ const Carousel = () => {
     },
     {
       id: 3,
-      image: 'https://placehold.co/1200x600/0f3460/ffffff?text=Pong',
+      image: 'https://placehold.co/1200x600/0f3460/ffffff?text=Pong (coming soon)',
       title: 'Pong',
       link: '/games/pong'
     }
