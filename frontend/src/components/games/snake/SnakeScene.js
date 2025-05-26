@@ -4,13 +4,16 @@ import { shapeColors } from './colors.js';
 export default class SnakeScene extends Phaser.Scene {
   constructor() {
     super('SnakeScene');
-    this.snake = [];
-    this.food = null;
-    this.direction = 'RIGHT';
-    this.newDirection = 'RIGHT';
-    this.moveTimer = 0;
-    this.score = 0;
-    this.scoreText = null;
+  }
+
+  init() {
+  this.snake = [];
+  this.food = null;
+  this.direction = 'RIGHT';
+  this.newDirection = 'RIGHT';
+  this.moveTimer = 0;
+  this.score = 0;
+  this.scoreText = null;
   }
 
   create() {
