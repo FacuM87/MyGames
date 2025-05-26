@@ -1,4 +1,3 @@
-// src/components/games/snake/SnakeGame.jsx
 import { useEffect, useRef } from "react";
 import Phaser from "phaser";
 import SnakeScene from "./SnakeScene.js";
