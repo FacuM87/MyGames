@@ -15,10 +15,10 @@ export default class SnakeScene extends Phaser.Scene {
 
     this.snake = [];
     for (let i = 0; i < 3; i++) {
-      this.snake.push(this.add.rectangle(160 - (i * 10), 160, 10, 10, shapeColors["green"]).setOrigin(0));
+      this.snake.push(this.add.rectangle(160 - (i * 10), 160, 10, 10, shapeColors.green).setOrigin(0));
     }
 
-    this.food = this.add.rectangle(this.getRandom(0, 390), this.getRandom(0, 390), 10, 10, shapeColors["red"]).setOrigin(0);
+    this.food = this.add.rectangle(this.getRandom(0, 390), this.getRandom(0, 390), 10, 10, shapeColors.red).setOrigin(0);
 
     this.input.keyboard.on('keydown', this.handleInput, this);
   }
@@ -41,7 +41,7 @@ export default class SnakeScene extends Phaser.Scene {
   moveSnake() {
     this.direction = this.newDirection;
     const head = this.snake[0];
-    const newHead = this.add.rectangle(head.x, head.y, 10, 10, shapeColors["green"]).setOrigin(0);
+    const newHead = this.add.rectangle(head.x, head.y, 10, 10, shapeColors.green).setOrigin(0);
 
     if (this.direction === 'RIGHT') newHead.x += 10;
     if (this.direction === 'LEFT') newHead.x -= 10;

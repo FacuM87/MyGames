@@ -10,5 +10,5 @@ export const shapeColors = {
 export const textColors = {
     red: '#ff0000',
     white: '#ffffff',
-    black: '#000000',
+    lightBlack: '1d1d1d'
 }
