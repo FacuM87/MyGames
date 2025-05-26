@@ -7,13 +7,13 @@ export default class SnakeScene extends Phaser.Scene {
   }
 
   init() {
-  this.snake = [];
-  this.food = null;
-  this.direction = 'RIGHT';
-  this.newDirection = 'RIGHT';
-  this.moveTimer = 0;
-  this.score = 0;
-  this.scoreText = null;
+    this.snake = [];
+    this.food = null;
+    this.direction = 'RIGHT';
+    this.newDirection = 'RIGHT';
+    this.moveTimer = 0;
+    this.score = 0;
+    this.scoreText = null;
   }
 
   create() {
