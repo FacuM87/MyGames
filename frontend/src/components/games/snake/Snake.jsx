@@ -27,8 +27,8 @@ export default function SnakeGame() {
   }, []);
 
   return (
-    <div>
-        <h1 className="text-4xl text-center font-bold mb-8 animate-fade-in m-0">Snake</h1>
+    <div className="animate-fade-in">
+        <h1 className="text-4xl text-center font-bold mb-8 m-0">Snake</h1>
         <div className="flex justify-center">
             <div ref={gameContainerRef} />
         </div>

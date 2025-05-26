@@ -27,6 +27,7 @@ const Header = () => {
               <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
                 <li><Link to="/games/tictactoe">Tic Tac Toe</Link></li>
                 <li><Link to="/games/snake">Snake</Link></li>
+                <li><Link to="/games/pong">Pong (coming soon)</Link></li>
                 <li className="divider"></li>
                 <li><Link to="/games">See more...</Link></li>
               </ul>

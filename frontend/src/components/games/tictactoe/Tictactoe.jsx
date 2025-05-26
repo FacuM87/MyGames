@@ -44,8 +44,8 @@ const TicTacToe = () => {
     }
 
     return (
-        <div className="flex flex-col items-center justify-center min-h-[calc(100vh-16rem)]">
-            <h1 className="text-4xl font-bold mb-8 animate-fade-in m-0">Tic&nbsp;Tac&nbsp;Toe</h1>
+        <div className="flex flex-col items-center justify-center min-h-[calc(100vh-16rem)] animate-fade-in">
+            <h1 className="text-4xl font-bold mb-8 m-0">Tic&nbsp;Tac&nbsp;Toe</h1>
             
             <div className="mb-8 text-xl">
                 {winner ? (
