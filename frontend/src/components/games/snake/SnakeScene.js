@@ -34,7 +34,7 @@ export default class SnakeScene extends Phaser.Scene {
       this.moveSnake();
       this.moveTimer = time + 150;
     }
-  }
+  } 
 
   handleInput(event) {
     const key = event.key;
