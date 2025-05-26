@@ -9,9 +9,12 @@ export default class SnakeScene extends Phaser.Scene {
     this.direction = 'RIGHT';
     this.newDirection = 'RIGHT';
     this.moveTimer = 0;
+    this.score = 0;
+    this.scoreText = null;
   }
 
   create() {
+    this.scoreText = this.add.text(20,20,`Score: ${this.score}`)
 
     this.snake = [];
     for (let i = 0; i < 3; i++) {
@@ -51,6 +54,8 @@ export default class SnakeScene extends Phaser.Scene {
     this.snake.unshift(newHead);
 
     if (Phaser.Geom.Intersects.RectangleToRectangle(newHead.getBounds(), this.food.getBounds())) {
+      this.score += 100
+      this.scoreText.setText(`Score: ${this.score}`)
       this.food.x = this.getRandom(0, 390);
       this.food.y = this.getRandom(0, 390);
     } else {
@@ -59,7 +64,7 @@ export default class SnakeScene extends Phaser.Scene {
     }
 
     if ( newHead.x < 0 || newHead.x >= 400 || newHead.y < 0 || newHead.y >= 400 || this.snake.slice(1).some(seg => seg.x === newHead.x && seg.y === newHead.y)){
-      this.scene.start('GameOverScene');
+      this.scene.start('GameOverScene',{finalScore: this.score});
     }
   }
 
