@@ -12,9 +12,15 @@ export default class PongScene extends Phaser.Scene {
         this.ball = null
         this.paddle1Direction = ''
         this.paddle2Direction = ''
+        this.score1 = 0
+        this.score2 = 0
+        this.scoreText1 = null;
+        this.scoreText2 = null;
     }
 
     create(){
+        this.scoreText1 = this.add.text(30,20,`Score: ${this.score1}`)
+        this.scoreText2 = this.add.text(290,20,`Score: ${this.score2}`)
 
         const paddleSegmentHeight = 10;
         const paddleWidth = 10;
@@ -52,7 +58,7 @@ export default class PongScene extends Phaser.Scene {
             }
         } else if (this.paddle1Direction === 'DOWN') {
             const bottomY = this.paddle1[3].y;
-            if (bottomY - paddleSpeed <= (this.game.config.height- 10*2)){
+            if (bottomY - paddleSpeed <= (this.game.config.height - 10*2)){
                 this.paddle1.forEach(segment => segment.y += paddleSpeed);
             }
         }
@@ -64,14 +70,38 @@ export default class PongScene extends Phaser.Scene {
             }
         } else if (this.paddle2Direction === 'DOWN') {
             const bottomY = this.paddle2[3].y;
-            if (bottomY - paddleSpeed <= (this.game.config.height- 10*2)) {
+            if (bottomY - paddleSpeed <= (this.game.config.height - 10*2)) {
                 this.paddle2.forEach(segment => segment.y += paddleSpeed);
             }
         }
     }
 
+    moveBall(){
+        // const ballSpeed = 2;
+        
+        if (this.ball.y < 0){
+            console.log('bounce');
+            
+        } else if (this.ball.y >= 390){
+            console.log('bounce'); 
+        }
+        
+        if (this.ball.x < 0){
+            this.score2++
+            this.scoreText2.setText(`Score: ${this.score2}`)
+            this.ball.x = 200
+            this.ball.y = 200
+
+        } else if (this.ball.x >= 390){
+            this.score1++
+            this.scoreText1.setText(`Score: ${this.score1}`)
+            this.ball.x = 200
+            this.ball.y = 200
+        }
+    }
 
     update(){
         this.movePaddles();
+        this.moveBall();
     }
 }
